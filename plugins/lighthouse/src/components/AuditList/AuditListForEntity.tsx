@@ -28,14 +28,14 @@ import { Button } from '@material-ui/core';
 import { resolvePath, useNavigate } from 'react-router-dom';
 import { useEntity } from '@backstage/plugin-catalog-react';
 import { useRouteRef } from '@backstage/core-plugin-api';
-import { rootRouteRef } from '../../plugin';
+import { entityContentRouteRef } from '../../plugin';
 import LighthouseSupportButton from '../SupportButton';
 
 export const AuditListForEntity = () => {
   const { value, loading, error } = useWebsiteForEntity();
   const { entity } = useEntity();
   const navigate = useNavigate();
-  const fromPath = useRouteRef(rootRouteRef)?.() ?? '../';
+  const fromPath = useRouteRef(entityContentRouteRef)?.() ?? '../';
 
   let createAuditButtonUrl = 'create-audit';
   const websiteUrl =
