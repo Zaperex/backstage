@@ -204,7 +204,7 @@ export class TaskManager implements TaskContext {
       clearTimeout(this.heartbeatTimeoutId);
     }
     const commonAuditFields = {
-      eventName: 'scaffolderTask',
+      eventName: 'ScaffolderTask',
       actor_id: 'scaffolder-backend',
       stage: 'completion',
       metadata: {
@@ -216,7 +216,7 @@ export class TaskManager implements TaskContext {
       await this.auditLogger?.auditErrorLog({
         ...commonAuditFields,
         errors: [metadata?.error],
-        message: `Scaffolding task with taskId: ${this.task.taskId} completed successfully`,
+        message: `Scaffolding task with taskId: ${this.task.taskId} failed`,
       });
     } else {
       await this.auditLogger?.auditLog({
@@ -225,7 +225,7 @@ export class TaskManager implements TaskContext {
           ...commonAuditFields.metadata,
           ...metadata,
         },
-        message: `Scaffolding task with taskId: ${this.task.taskId} failed`,
+        message: `Scaffolding task with taskId: ${this.task.taskId} completed successfully`,
       });
     }
   }
@@ -469,7 +469,7 @@ export class StorageTaskBroker implements TaskBroker {
         try {
           this.auditLogger.auditLog({
             actor_id: 'scaffolder-backend',
-            eventName: 'scaffolderStaleTaskCancellation',
+            eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'initiation',
             metadata: {
               taskId: task.taskId,
@@ -486,7 +486,7 @@ export class StorageTaskBroker implements TaskBroker {
           });
           this.auditLogger.auditLog({
             actor_id: 'scaffolder-backend',
-            eventName: 'scaffolderStaleTaskCancellation',
+            eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'completion',
             metadata: {
               taskId: task.taskId,
@@ -496,7 +496,7 @@ export class StorageTaskBroker implements TaskBroker {
         } catch (error) {
           this.auditLogger.auditErrorLog({
             actor_id: 'scaffolder-backend',
-            eventName: 'scaffolderStaleTaskCancellation',
+            eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'completion',
             metadata: {
               taskId: task.taskId,
