@@ -237,7 +237,7 @@ describe('NunjucksWorkflowRunner', () => {
     );
     const auditLogErrorMeta = {
       ...commonAuditErrorMeta,
-      eventName: 'ScaffolderTaskStep',
+      eventName: 'ScaffolderTaskStepExecution',
       stage: 'completion',
       meta: {
         taskId: 'a-random-id',
@@ -278,7 +278,7 @@ describe('NunjucksWorkflowRunner', () => {
       );
       const auditLogErrorMeta = {
         ...commonAuditErrorMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           taskId: 'a-random-id',
@@ -303,7 +303,7 @@ describe('NunjucksWorkflowRunner', () => {
       expect(loggerSpy).toHaveBeenCalledTimes(1);
       const auditLogInitMeta = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -354,7 +354,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -368,7 +368,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -411,7 +411,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -425,7 +425,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -490,7 +490,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: entityRef,
@@ -504,7 +504,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: entityRef,
@@ -586,7 +586,7 @@ describe('NunjucksWorkflowRunner', () => {
       const { output } = await runner.execute(task);
       const auditLogStep1 = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -600,7 +600,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStep1Success = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -613,7 +613,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStep2 = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -628,7 +628,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStep2Success = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -686,7 +686,7 @@ describe('NunjucksWorkflowRunner', () => {
       expect(output.result).toBeUndefined();
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -700,7 +700,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -795,7 +795,7 @@ describe('NunjucksWorkflowRunner', () => {
       );
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -811,7 +811,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -858,7 +858,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -872,7 +872,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -941,7 +941,7 @@ describe('NunjucksWorkflowRunner', () => {
       expect(logger.error).not.toHaveBeenCalled();
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -957,7 +957,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1010,7 +1010,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1027,7 +1027,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1077,7 +1077,7 @@ describe('NunjucksWorkflowRunner', () => {
       );
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1095,7 +1095,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1148,7 +1148,7 @@ describe('NunjucksWorkflowRunner', () => {
       );
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1164,7 +1164,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1217,7 +1217,7 @@ describe('NunjucksWorkflowRunner', () => {
       );
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1233,7 +1233,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1445,7 +1445,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStepCompletion = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1458,7 +1458,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1683,7 +1683,7 @@ describe('NunjucksWorkflowRunner', () => {
 
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1697,7 +1697,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -1749,7 +1749,7 @@ describe('NunjucksWorkflowRunner', () => {
       // The value of secrets should be REDACTED in the audit logs
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -1765,7 +1765,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -2129,7 +2129,7 @@ describe('NunjucksWorkflowRunner', () => {
       expect(fakeActionHandler.mock.calls[0][0].isDryRun).toEqual(true);
       const auditLogStep = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',
@@ -2145,7 +2145,7 @@ describe('NunjucksWorkflowRunner', () => {
       };
       const auditLogStepSuccess = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           templateRef: '',
@@ -2196,7 +2196,7 @@ describe('NunjucksWorkflowRunner', () => {
 }`);
       const auditLogErrorMeta = {
         ...commonAuditErrorMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         meta: {
           taskId: 'a-random-id',
@@ -2223,7 +2223,7 @@ describe('NunjucksWorkflowRunner', () => {
       expect(loggerSpy).toHaveBeenCalledTimes(1);
       const auditLogInitMeta = {
         ...commonAuditLogMeta,
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         meta: {
           templateRef: '',

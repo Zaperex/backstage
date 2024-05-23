@@ -204,7 +204,7 @@ export class TaskManager implements TaskContext {
       clearTimeout(this.heartbeatTimeoutId);
     }
     const commonAuditFields = {
-      eventName: 'ScaffolderTask',
+      eventName: 'ScaffolderTaskExecution',
       actor_id: 'scaffolder-backend',
       stage: 'completion',
       metadata: {

@@ -310,7 +310,7 @@ export class NunjucksWorkflowRunner implements WorkflowRunner {
 
       await this.options.auditLogger.auditLog({
         actor_id: 'scaffolder-backend',
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'initiation',
         metadata: commonStepAuditMetadata,
         message: `Started ${step.name} (id: ${step.id}) of task ${task.taskId} triggering the ${step.action} action`,
@@ -707,7 +707,7 @@ function scaffoldingTracker(auditLogger: AuditLogger) {
       stepTimer({ result: 'ok' });
       await auditLogger.auditLog({
         actor_id: 'scaffolder-backend',
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         metadata: {
           templateRef: template,
@@ -739,7 +739,7 @@ function scaffoldingTracker(auditLogger: AuditLogger) {
       stepTimer({ result: 'failed' });
       await auditLogger.auditErrorLog({
         actor_id: 'scaffolder-backend',
-        eventName: 'ScaffolderTaskStep',
+        eventName: 'ScaffolderTaskStepExecution',
         stage: 'completion',
         metadata: {
           templateRef: template,
