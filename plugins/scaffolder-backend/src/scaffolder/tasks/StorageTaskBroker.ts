@@ -205,7 +205,7 @@ export class TaskManager implements TaskContext {
     }
     const commonAuditFields = {
       eventName: 'ScaffolderTaskExecution',
-      actor_id: 'scaffolder-backend',
+      actorId: 'scaffolder-backend',
       stage: 'completion',
       metadata: {
         taskId: this.task.taskId,
@@ -468,7 +468,7 @@ export class StorageTaskBroker implements TaskBroker {
       tasks.map(async task => {
         try {
           this.auditLogger.auditLog({
-            actor_id: 'scaffolder-backend',
+            actorId: 'scaffolder-backend',
             eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'initiation',
             metadata: {
@@ -485,7 +485,7 @@ export class StorageTaskBroker implements TaskBroker {
             },
           });
           this.auditLogger.auditLog({
-            actor_id: 'scaffolder-backend',
+            actorId: 'scaffolder-backend',
             eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'completion',
             metadata: {
@@ -495,7 +495,7 @@ export class StorageTaskBroker implements TaskBroker {
           });
         } catch (error) {
           this.auditLogger.auditErrorLog({
-            actor_id: 'scaffolder-backend',
+            actorId: 'scaffolder-backend',
             eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'completion',
             metadata: {
