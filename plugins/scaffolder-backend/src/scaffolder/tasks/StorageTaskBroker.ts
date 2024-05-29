@@ -213,14 +213,17 @@ export class TaskManager implements TaskContext {
       },
     };
     if (result === 'failed') {
-      await this.auditLogger?.auditErrorLog({
+      await this.auditLogger?.auditLog({
         ...commonAuditFields,
+        status: 'failed',
+        level: 'error',
         errors: [metadata?.error],
         message: `Scaffolding task with taskId: ${this.task.taskId} failed`,
       });
     } else {
       await this.auditLogger?.auditLog({
         ...commonAuditFields,
+        status: 'succeeded',
         metadata: {
           ...commonAuditFields.metadata,
           ...metadata,
@@ -471,6 +474,7 @@ export class StorageTaskBroker implements TaskBroker {
             actorId: 'scaffolder-backend',
             eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'initiation',
+            status: 'succeeded',
             metadata: {
               taskId: task.taskId,
             },
@@ -488,16 +492,19 @@ export class StorageTaskBroker implements TaskBroker {
             actorId: 'scaffolder-backend',
             eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'completion',
+            status: 'succeeded',
             metadata: {
               taskId: task.taskId,
             },
             message: `Stale scaffolding task ${task.taskId} successfully cancelled`,
           });
         } catch (error) {
-          this.auditLogger.auditErrorLog({
+          this.auditLogger.auditLog({
             actorId: 'scaffolder-backend',
             eventName: 'ScaffolderStaleTaskCancellation',
             stage: 'completion',
+            status: 'failed',
+            level: 'error',
             metadata: {
               taskId: task.taskId,
             },
