@@ -33,8 +33,10 @@ import { version as root } from '../../../../package.json';
 
 import { version as appDefaults } from '../../../app-defaults/package.json';
 import { version as frontendDefaults } from '../../../frontend-defaults/package.json';
+import { version as frontendDynamicFeatureLoader } from '../../../frontend-dynamic-feature-loader/package.json';
 import { version as frontendPluginApi } from '../../../frontend-plugin-api/package.json';
 import { version as backendDefaults } from '../../../backend-defaults/package.json';
+import { version as backendDynamicFeatureService } from '../../../backend-dynamic-feature-service/package.json';
 import { version as catalogClient } from '../../../catalog-client/package.json';
 import { version as catalogModel } from '../../../catalog-model/package.json';
 import { version as cli } from '../../../cli/package.json';
@@ -103,8 +105,10 @@ export const packageVersions = {
   root,
   '@backstage/app-defaults': appDefaults,
   '@backstage/frontend-defaults': frontendDefaults,
+  '@backstage/frontend-dynamic-feature-loader': frontendDynamicFeatureLoader,
   '@backstage/frontend-plugin-api': frontendPluginApi,
   '@backstage/backend-defaults': backendDefaults,
+  '@backstage/backend-dynamic-feature-service': backendDynamicFeatureService,
   '@backstage/catalog-client': catalogClient,
   '@backstage/catalog-model': catalogModel,
   '@backstage/cli': cli,
