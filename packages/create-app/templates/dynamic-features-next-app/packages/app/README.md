@@ -1,0 +1,59 @@
+# example-dynamic-frontend
+
+This package is an EXAMPLE of a Backstage frontend with module federation support.
+
+The main purpose of this package is to provide a test bed for Backstage plugins
+using the new frontend system. Feel free to experiment locally or within your fork by
+adding features and module federation bundles to this frontend, to try things out.
+
+Our goal is to eventually amend the create-app flow of the CLI, such that a
+production ready version of a frontend skeleton is made alongside the backend
+app. Until then, feel free to experiment here!
+
+## Development
+
+To run the example frontend, first go to the project root and run
+
+```bash
+yarn install
+```
+
+You should only need to do this once.
+
+After that, go to the `packages/app` directory and run
+
+```bash
+yarn start
+```
+
+The frontend starts up on port 3000 per default. 
+For more information on setting up the new frontend system, see the [Backstage documentation](https://backstage.io/docs/frontend-system/).
+
+## Adding frontend features with module federation
+
+To be able to add a frontend feature at runtime with module federation in this example frontend, you need to:
+
+1. Build the frontend feature as a module federation remote bundle:
+
+```bash
+cd /path/to/your-frontend-feature
+yarn build --role frontend-dynamic-container
+```
+
+NOTE: this only works for plugins with support for the new frontend system.
+
+2. Copy the frontend feature package (including the `dist` folder) to the `dynamic-plugins-root` directory:
+
+```bash
+cp -R /path/to/your-frontend-feature ./dynamic-plugins-root/
+```
+
+3. Restart the frontend.
+
+The frontend feature should now be available in the frontend. You will just need to configure the frontend feature in your `app-config.yaml`, similar to how you would normally configure a static frontend feature.
+
+## Documentation
+
+- [Backstage documentation](https://backstage.io/docs/frontend-system/)
+- [Backend dynamic feature service](https://github.com/backstage/backstage/blob/master/packages/backend-dynamic-feature-service/README.md)
+- [Frontend dynamic feature loader](https://github.com/backstage/backstage/blob/master/packages/frontend-dynamic-feature-loader/README.md)
