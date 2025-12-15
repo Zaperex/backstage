@@ -8,3 +8,5 @@ To start the app, run:
 yarn install
 yarn start
 ```
+
+To add plugins dynamically, see the documentation in [dynamic-plugins-root](./dynamic-plugins-root/README.md) for more information.

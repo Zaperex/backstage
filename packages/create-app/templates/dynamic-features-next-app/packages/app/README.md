@@ -26,31 +26,14 @@ After that, go to the `packages/app` directory and run
 yarn start
 ```
 
-The frontend starts up on port 3000 per default. 
+The frontend starts up on port 3000 per default.
 For more information on setting up the new frontend system, see the [Backstage documentation](https://backstage.io/docs/frontend-system/).
 
 ## Adding frontend features with module federation
 
-To be able to add a frontend feature at runtime with module federation in this example frontend, you need to:
+This frontend also supports loading plugins dynamically at runtime using module federation. Frontend plugins can be built as module federation remote bundles and placed in the `dynamic-plugins-root` directory to be automatically discovered and loaded.
 
-1. Build the frontend feature as a module federation remote bundle:
-
-```bash
-cd /path/to/your-frontend-feature
-yarn build --role frontend-dynamic-container
-```
-
-NOTE: this only works for plugins with support for the new frontend system.
-
-2. Copy the frontend feature package (including the `dist` folder) to the `dynamic-plugins-root` directory:
-
-```bash
-cp -R /path/to/your-frontend-feature ./dynamic-plugins-root/
-```
-
-3. Restart the frontend.
-
-The frontend feature should now be available in the frontend. You will just need to configure the frontend feature in your `app-config.yaml`, similar to how you would normally configure a static frontend feature.
+For detailed instructions on building, installing, and configuring dynamic frontend plugins, see the [Dynamic Plugins README](../../dynamic-plugins-root/README.md).
 
 ## Documentation
 
