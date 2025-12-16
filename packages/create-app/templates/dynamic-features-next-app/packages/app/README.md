@@ -6,10 +6,6 @@ The main purpose of this package is to provide a test bed for Backstage plugins
 using the new frontend system. Feel free to experiment locally or within your fork by
 adding features and module federation bundles to this frontend, to try things out.
 
-Our goal is to eventually amend the create-app flow of the CLI, such that a
-production ready version of a frontend skeleton is made alongside the backend
-app. Until then, feel free to experiment here!
-
 ## Development
 
 To run the example frontend, first go to the project root and run
@@ -32,6 +28,9 @@ For more information on setting up the new frontend system, see the [Backstage d
 ## Adding frontend features with module federation
 
 This frontend also supports loading plugins dynamically at runtime using module federation. Frontend plugins can be built as module federation remote bundles and placed in the `dynamic-plugins-root` directory to be automatically discovered and loaded.
+
+To use dynamic plugins, you will need to ensure the backend is running alongside the frontend since it scans the `dynamic-plugins-root` directory for available plugins, exposes their metadata through an API endpoint, and serves the plugin bundles (module federation assets) that the frontend loads at runtime.
+You should run `yarn start` from the project root to start both the backend and frontend together instead.
 
 For detailed instructions on building, installing, and configuring dynamic frontend plugins, see the [Dynamic Plugins README](../../dynamic-plugins-root/README.md).
 
