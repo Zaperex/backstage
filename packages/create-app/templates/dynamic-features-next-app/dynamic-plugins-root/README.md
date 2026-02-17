@@ -6,7 +6,6 @@ This directory is where dynamic plugins are installed for runtime loading.
 
 Dynamic plugins allow you to add frontend and backend plugins to your Backstage instance without rebuilding the application. Plugins placed in this directory will be automatically discovered and loaded at startup.
 
-
 ---
 
 ## Exporting Plugins as Dynamic
@@ -250,6 +249,8 @@ dynamicPlugins:
   # Path to the dynamic plugins directory (relative to backstage root or absolute)
   rootDirectory: dynamic-plugins-root
 ```
+
+This `dynamic-plugins-root` directory can be mounted via a volume mount when running a pre-built container.
 
 ### Starting the Application
 
