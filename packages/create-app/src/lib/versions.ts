@@ -50,6 +50,7 @@ import { version as corePluginApi } from '../../../core-plugin-api/package.json'
 import { version as e2eTestUtils } from '../../../e2e-test-utils/package.json';
 import { version as errors } from '../../../errors/package.json';
 import { version as integrationReact } from '../../../integration-react/package.json';
+import { version as moduleFederationCommon } from '../../../module-federation-common/package.json';
 import { version as testUtils } from '../../../test-utils/package.json';
 import { version as theme } from '../../../theme/package.json';
 import { version as repoTools } from '../../../repo-tools/package.json';
@@ -122,6 +123,7 @@ export const packageVersions = {
   '@backstage/e2e-test-utils': e2eTestUtils,
   '@backstage/errors': errors,
   '@backstage/integration-react': integrationReact,
+  '@backstage/module-federation-common': moduleFederationCommon,
   '@backstage/repo-tools': repoTools,
   '@backstage/plugin-api-docs': pluginApiDocs,
   '@backstage/plugin-app-backend': pluginAppBackend,
