@@ -32,10 +32,9 @@ This frontend also supports loading plugins dynamically at runtime using module 
 To use dynamic plugins, you will need to ensure the backend is running alongside the frontend since it scans the `dynamic-plugins-root` directory for available plugins, exposes their metadata through an API endpoint, and serves the plugin bundles (module federation assets) that the frontend loads at runtime.
 You should run `yarn start` from the project root to start both the backend and frontend together instead.
 
-For detailed instructions on building, installing, and configuring dynamic frontend plugins, see the [Dynamic Plugins README](../../dynamic-plugins-root/README.md).
+For instructions on bundling and installing dynamic plugins, see the [Dynamic Plugins Docs](../../dynamic-plugins-root/README.md). For details on how frontend dynamic plugins are loaded via module federation, see the [`@backstage/frontend-dynamic-feature-loader` Docs](https://github.com/backstage/backstage/blob/master/packages/frontend-dynamic-feature-loader/README.md).
 
 ## Documentation
 
-- [Backstage documentation](https://backstage.io/docs/frontend-system/)
 - [Backend dynamic feature service](https://github.com/backstage/backstage/blob/master/packages/backend-dynamic-feature-service/README.md)
 - [Frontend dynamic feature loader](https://github.com/backstage/backstage/blob/master/packages/frontend-dynamic-feature-loader/README.md)

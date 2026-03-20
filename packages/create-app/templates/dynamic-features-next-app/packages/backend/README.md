@@ -53,12 +53,11 @@ and
 
 This backend is configured with the `@backstage/backend-dynamic-feature-service` which enables loading backend and frontend plugins dynamically at runtime without rebuilding the application.
 
-At startup, the dynamic plugin manager scans the configured `dynamicPlugins.rootDirectory`directory for valid plugin packages. Valid plugins are then loaded at runtime and their features get exposed to the backend.
+At startup, the dynamic plugin manager scans the configured `dynamicPlugins.rootDirectory` directory for valid plugin packages. Valid plugins are then loaded at runtime and their features get exposed to the backend.
 
-For detailed instructions on exporting, installing, and configuring dynamic plugins, see the [Dynamic Plugins README](../../dynamic-plugins-root/README.md).
+For instructions on bundling and installing dynamic plugins, see the [Dynamic Plugins Docs](../../dynamic-plugins-root/README.md). For details on packaging approaches, loading architecture, and configuration, see the [`@backstage/backend-dynamic-feature-service` README](https://github.com/backstage/backstage/blob/master/packages/backend-dynamic-feature-service/README.md).
 
 ## Documentation
 
-- [Backstage Readme](https://github.com/backstage/backstage/blob/master/README.md)
 - [Backstage Documentation](https://backstage.io/docs)
 - [Backend Dynamic Feature Service](https://github.com/backstage/backstage/blob/master/packages/backend-dynamic-feature-service/README.md)
