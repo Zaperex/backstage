@@ -33,8 +33,10 @@ import { version as root } from '../../../../package.json';
 
 import { version as appDefaults } from '../../../app-defaults/package.json';
 import { version as frontendDefaults } from '../../../frontend-defaults/package.json';
+import { version as frontendDynamicFeatureLoader } from '../../../frontend-dynamic-feature-loader/package.json';
 import { version as frontendPluginApi } from '../../../frontend-plugin-api/package.json';
 import { version as backendDefaults } from '../../../backend-defaults/package.json';
+import { version as backendDynamicFeatureService } from '../../../backend-dynamic-feature-service/package.json';
 import { version as catalogClient } from '../../../catalog-client/package.json';
 import { version as catalogModel } from '../../../catalog-model/package.json';
 import { version as cli } from '../../../cli/package.json';
@@ -48,6 +50,7 @@ import { version as corePluginApi } from '../../../core-plugin-api/package.json'
 import { version as e2eTestUtils } from '../../../e2e-test-utils/package.json';
 import { version as errors } from '../../../errors/package.json';
 import { version as integrationReact } from '../../../integration-react/package.json';
+import { version as moduleFederationCommon } from '../../../module-federation-common/package.json';
 import { version as testUtils } from '../../../test-utils/package.json';
 import { version as theme } from '../../../theme/package.json';
 import { version as repoTools } from '../../../repo-tools/package.json';
@@ -105,8 +108,10 @@ export const packageVersions = {
   root,
   '@backstage/app-defaults': appDefaults,
   '@backstage/frontend-defaults': frontendDefaults,
+  '@backstage/frontend-dynamic-feature-loader': frontendDynamicFeatureLoader,
   '@backstage/frontend-plugin-api': frontendPluginApi,
   '@backstage/backend-defaults': backendDefaults,
+  '@backstage/backend-dynamic-feature-service': backendDynamicFeatureService,
   '@backstage/catalog-client': catalogClient,
   '@backstage/catalog-model': catalogModel,
   '@backstage/cli': cli,
@@ -120,6 +125,7 @@ export const packageVersions = {
   '@backstage/e2e-test-utils': e2eTestUtils,
   '@backstage/errors': errors,
   '@backstage/integration-react': integrationReact,
+  '@backstage/module-federation-common': moduleFederationCommon,
   '@backstage/repo-tools': repoTools,
   '@backstage/plugin-api-docs': pluginApiDocs,
   '@backstage/plugin-app-backend': pluginAppBackend,
